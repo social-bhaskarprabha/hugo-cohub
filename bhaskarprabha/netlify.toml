@@ -1,17 +1,15 @@
 [build]
-  base = "/"  # Update if your Hugo site is in a different directory
   command = "hugo"
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.119.0"  # Update to the latest supported Hugo version
+  GO_VERSION = "1.20"
+  HUGO_VERSION = "0.119.0"
+  HUGO_ENABLEGITINFO = "true"
 
-[context.deploy-preview]
-  command = "hugo --buildDrafts"
+[context.production.environment]
+  HUGO_ENV = "production"
 
 [dev]
   framework = "hugo"
   targetPort = 1313
-
-[[plugins]]
-  package = "netlify-plugin-hugo-cache-resources"
