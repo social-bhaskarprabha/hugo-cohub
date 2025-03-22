@@ -1,0 +1,3 @@
+[submodule "bhaskarprabha/themes/coHub"]
+	path = bhaskarprabha/themes/coHub
+	url = https://github.com/social-bhaskarprabha/hugo-coHub.git
