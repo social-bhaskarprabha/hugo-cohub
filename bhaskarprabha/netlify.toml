@@ -1,7 +1,17 @@
 [build]
-  command = "hugo --gc --minify"
+  base = "/"  # Update if your Hugo site is in a different directory
+  command = "hugo"
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.119.0"
-  HUGO_THEME = "coHub"
+  HUGO_VERSION = "0.119.0"  # Update to the latest supported Hugo version
+
+[context.deploy-preview]
+  command = "hugo --buildDrafts"
+
+[dev]
+  framework = "hugo"
+  targetPort = 1313
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"
